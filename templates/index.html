@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pneumonia Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 0px 30px;
+            background-image: url("../static/iStock-873418908.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            transform: scale(1.2);
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+        img {
+            width: 210px;
+            height: 210px;
+        }
+        .a1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .a2{
+            display: flex;
+            flex-direction: column;
+            margin-top:-30px;
+            padding-left: 30px;
+        }
+        .a2 h1{
+            margin-top: 3px;
+            font-size: 50px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <marquee behavior="" direction="" style="margin-top: 20px;">Welcome to our website</marquee>
+    <p>Welcome to Pneumonia disease prediction</p>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" id="k">
+        <input type="submit" value="Upload">
+    </form>
+    {% if result_display %}
+    {% if img_data %}
+    <div>
+        <img src="data:image/png;base64,{{ img_data }}" alt="Uploaded Image">
+    </div>
+    {% endif %}
+    <p style="margin-top: 20px;">{{ predict }}</p>
+    {% endif %}
+    <div class="a1">
+        <div class="a2">
+            <h1><strong>Public&nbsp;Service&nbsp;Web</strong></h1>
+            <h1 style="padding-left:300px;color: blue;">For</h1>
+            <h1 style="padding-left:580px;">Better&nbsp;Tomorrow</h1>
+        </div>
+    </div>
+</body>
+
+</html>
